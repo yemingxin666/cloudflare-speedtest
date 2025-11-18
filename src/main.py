@@ -73,13 +73,12 @@ class CloudflareSpeedTestApp:
         # 记录过滤统计
         logger.info(f"准备保存结果: 总计 {original_count} 个，有效 {filtered_count} 个，跳过 {skipped_count} 个（延迟为空）")
 
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
         if format == 'csv':
-            filename = self.results_dir / f"cf_speedtest_results_{timestamp}.csv"
+            filename = self.results_dir / f"cf_speedtest_results.csv"
             self._save_csv(filtered_results, locations, filename)
         elif format == 'json':
-            filename = self.results_dir / f"cf_speedtest_results_{timestamp}.json"
+            filename = self.results_dir / f"cf_speedtest_results.json"
             self._save_json(filtered_results, locations, filename)
         else:
             logger.error(f"不支持的格式: {format}")
