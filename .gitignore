@@ -38,8 +38,8 @@ env/
 htmlcov/
 
 # 结果文件
-results/*.csv
-results/*.json
+# results/*.csv
+# results/*.json
 
 # 日志
 *.log
